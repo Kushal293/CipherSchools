@@ -2,5 +2,117 @@
     background: #15181e;
     width: 80%;
     padding-left: 100px;
-    padding-top: 170px;
+    padding-top: 190px;
+    padding-right: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hr {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background: #262c36;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editBtn {
+    background: #F3912E;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.textarea {
+    background: #262c36;
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #FFF;
+}
+
+.textarea::placeholder {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.webLinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.singleLink {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputBox {
+    background: #262c36;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px; 
+}
+
+.input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.input::placeholder {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.selectBox {
+    position: relative;
+    background: #262c36;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px; 
+    font-size: 14px;
+    color: #ccc;
+}
+
+.dropdown {
+    list-style: none;
+    position: absolute;
+    bottom: -210px;
+    left: 0;
+    background: #262c36;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+    display: none;
+}
+
+.dropdown li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background: #483D35;
 }

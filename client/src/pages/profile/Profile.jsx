@@ -6,7 +6,7 @@ import Hero from '../../components/hero/Hero';
 
 const Profile = () => {
   return (
-      <div>
+      <div className={styles.profile}>
           <Navbar />
           <main className={styles.main}>
         <Sidebar />

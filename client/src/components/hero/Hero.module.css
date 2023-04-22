@@ -1,5 +1,5 @@
 .hero {
-    background: #000;
+    background: #15181e;
     min-height: 100vh;
     width: 100%;
     color: white;
@@ -7,4 +7,5 @@
 
 .section {
     display: flex;
+
 }

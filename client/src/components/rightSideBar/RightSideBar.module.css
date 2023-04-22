@@ -4,6 +4,35 @@
     border: 1px solid #3C424A;
     position: fixed;
     right: 0;
-    top: 170px;
+    top: 190px;
     bottom: 0;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebarItems {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    gap: 20px;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.25s ease-in-out;
+}
+
+.sidebarItems:hover {
+    background: #483D35;
 }
