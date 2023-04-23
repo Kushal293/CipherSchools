@@ -28,7 +28,6 @@ app.use(cors(corsOptions));
 
 DbConnect();
 app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
 
 app.get('/', (req, res) => {
     res.send(`server is running on ${ PORT }!`);

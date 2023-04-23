@@ -42,7 +42,7 @@ export const signUp = asyncHandler(async (req, res) => {
     
 });
 
-
+//* --------------Login---------------- *//
 
 export const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
@@ -111,12 +111,12 @@ export const forgotPassword = asyncHandler(async (req, res) => {
 
     try {
         
-        // await mailHelper({
-        //     email: user.email,
-        //     subject: subject,
-        //     text: text,
-        //     html: html,
-        // });
+        await mailHelper({
+            email: user.email,
+            subject: subject,
+            text: text,
+            html: html,
+        });
 
         res.status(200).json({
             success: true,
@@ -173,6 +173,42 @@ export const resetPassword = asyncHandler(async (req, res) => {
     });
 });
 
+//* --------------Change Password---------------- *//
+
 export const changePassword = asyncHandler(async (req, res) => {
-    console.log("User has been logged");
+    const { user } = req;
+    const { currentPassword, newPassword, confirmPassword } = req.body;
+
+    if (!user) {
+        throw new CustomError("User not found", 401);
+    }
+
+    const newUser = await User.findOne({ email: user.email }).select("+password");
+
+    if (!newUser) {
+        throw new CustomError("User not found", 401);
+    }
+
+    const isValidPassword = await newUser.comparePassword(currentPassword);
+
+    if (!isValidPassword) {
+        throw new CustomError("Enter a valid password");
+    }
+
+    newUser.password = newPassword;
+    newUser.confirmPassword = confirmPassword;
+
+    await newUser.save();
+
+    const token = newUser.getJwtToken();
+
+    newUser.password = undefined;
+    newUser.confirmPassword = undefined;
+
+    res.cookie('token', token, cookieOptions);
+
+    res.status(200).json({
+        success: true,
+        newUser,
+    });
 })

@@ -3,25 +3,37 @@ import CustomError from '../utils/customError.js';
 import User from '../models/userSchema.js'
 
 export const getUser = asyncHandler(async (req, res) => {
-    const { userId } = req.params;
+    const { user } = req;
 
-    const user = await User.findById(userId);
-    const { updatedAt, ...userInfo } = user._doc;
+    if (!user) {
+        throw new CustomError("user not found", 404);
+    }
+
     res.status(200).json({
         success: true,
-        userInfo,
+        user,
     });
 });
 
 export const updateUserProfile = asyncHandler(async (req, res) => {
-    const { userId } = req.params;
-    if (req.body.userId === userId) {
-        const user = await User.findByIdAndUpdate(userId, {
-            $set: req.body,
-        });
+    const { user } = req.user;
+    
+    if (!user) {
+        throw new CustomError("user not found", 404);
+    }
+
+    const newuser = await User.findOneAndUpdate({
+        email: user.email,
+    }, {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname, 
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+    });
+
         res.status(200).json({
             success: true,
             message: "Profile has been updated",
+            user: newuser,
         });
-    }
 })
