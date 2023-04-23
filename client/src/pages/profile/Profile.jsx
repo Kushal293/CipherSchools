@@ -6,19 +6,24 @@ import Hero from '../../components/hero/Hero';
 import ProfileModal from '../../components/profileModal/ProfileModal';
 import InterestModal from '../../components/interestModal/InterestModal';
 import ChangePasswordModal from '../../components/changePasswordModal.jsx/ChangePasswordModal';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
-  const [ isOpen, setIsOpen ] = useState(false);
+  
+  const isProfileOpen = useSelector(store => store.modals.isProfileOpen);
+  const isPasswordOpen = useSelector(store => store.modals.isPasswordOpen);
+  const isInterestOpen = useSelector(store => store.modals.isInterestOpen);
+
   return (
-      <div className={`${styles.profile} ${isOpen ? styles.profileModalOpen : ""}`}>
+      <div className={`${styles.profile} ${isProfileOpen || isPasswordOpen ||isInterestOpen ? styles.profileModalOpen : ""}`}>
           <Navbar />
           <main className={styles.main}>
         <Sidebar />
         <Hero />
       </main>
-      {/* { isOpen &&<ProfileModal />} */}
-      {/* { isOpen &&<InterestModal />} */}
-      {/* { isOpen &&<ChangePasswordModal />} */}
+      { isProfileOpen && <ProfileModal />}
+      { isPasswordOpen && <ChangePasswordModal />}
+      { isInterestOpen && <InterestModal />}
     </div>
   )
 }

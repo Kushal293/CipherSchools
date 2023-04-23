@@ -1,7 +1,10 @@
 import React from 'react'
 import styles from './ChangePasswordModal.module.css';
+import { togglePasswordModal } from '../../utils/modalSlice';
+import { useDispatch } from 'react-redux';
 
 const ChangePasswordModal = () => {
+    const dispatch = useDispatch();
   return (
       <div className={ styles.modal }>
           <div className={ styles.card }>
@@ -25,7 +28,7 @@ const ChangePasswordModal = () => {
                     <br />
                   </div>
                   <div className={ styles.btns }>
-                      <button className={styles.cancelbtn}>Cancel</button>
+                      <button className={styles.cancelbtn} onClick={() => dispatch(togglePasswordModal())}>Cancel</button>
                       <button className={ styles.submitbtn }>Submit</button>
                   </div>
               </form>

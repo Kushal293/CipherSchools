@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { MdModeEditOutline } from 'react-icons/md/index.esm';
+import { toggleProfileModal } from '../../utils/modalSlice';
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
+    const dispatch = useDispatch();
   return (
       <div className={ styles.header }>
           <div className={styles.leftside}>
-              <div className={styles.userLogo}>
+              <div className={styles.userLogo} onClick={() => dispatch(toggleProfileModal())}>
                   K
                   <div className={styles.logoEdit}> <MdModeEditOutline size="15px" /></div>
               </div>

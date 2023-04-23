@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Content.module.css';
+import { useDispatch } from 'react-redux'
+import { togglePasswordModal, toggleInterestModal } from '../../utils/modalSlice';
 import { AiFillLinkedin } from 'react-icons/ai/index.esm';
 import { AiFillGithub } from 'react-icons/ai/index.esm';
 import { BsFacebook } from 'react-icons/bs/index.esm';
@@ -12,6 +14,7 @@ import CalendarHeatmap from 'react-calendar-heatmap';
 const Content = () => {
     const [ isOpen, setIsOpen ] = useState(false);
     const [ isOpen2, setIsOpen2 ] = useState(false);
+    const dispatch = useDispatch();
     const dateJan = [ 22, 23, 24, 25, 26, 27, 28 ];
     const dateFeb = [ 1, 7, 9, 13, 17, 19, 25];
     const dateMarch = [ 5, 6, 7, 8, 9, 10, 11, 18, 25, 26, 27, 28, 29, 30, 31 ];
@@ -149,7 +152,9 @@ const Content = () => {
           <div className={styles.section}>
               <div className={styles.heading}>
                   <h4>PASSWORD AND SECURITY</h4>
-                  <button className={styles.editBtn}>Change</button>
+                  <button className={ styles.editBtn } onClick={ () => {
+                      dispatch(togglePasswordModal());
+                  }}>Change</button>
               </div>
                   <div className={ styles.singleLink }>
                       <h4>PASSWORD</h4>
@@ -162,7 +167,9 @@ const Content = () => {
           <div className={styles.section}>
               <div className={styles.heading}>
                   <h4>INTERESTS</h4>
-                  <button className={styles.editBtn}>Edit</button>
+                  <button className={ styles.editBtn } onClick={ () => {
+                      dispatch(toggleInterestModal());
+                  }}>Edit</button>
               </div>
           </div>
           <br />

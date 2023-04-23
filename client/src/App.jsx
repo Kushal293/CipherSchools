@@ -5,13 +5,17 @@ import './App.css'
 import Profile from './pages/profile/Profile';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import { Provider } from 'react-redux';
+import store from './utils/store';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Profile />
+      <Provider store={ store }>
+        <Profile />
+      </Provider>
     </>
   )
 }

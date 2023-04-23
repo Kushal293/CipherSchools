@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './ProfileModal.module.css';
 import { MdModeEditOutline } from 'react-icons/md/index.esm';
+import { toggleProfileModal } from '../../utils/modalSlice';
+import { useDispatch } from 'react-redux';
 
 const ProfileModal = () => {
+    const dispatch = useDispatch();
   return (
       <div className={ styles.modal }>
           <div className={ styles.card }>
@@ -43,7 +46,7 @@ const ProfileModal = () => {
                     <br />
                   </div>
                   <div className={ styles.btns }>
-                      <button className={styles.cancelbtn}>Cancel</button>
+                      <button className={styles.cancelbtn} onClick={() => dispatch(toggleProfileModal())}>Cancel</button>
                       <button className={ styles.submitbtn }>Submit</button>
                   </div>
               </form>
