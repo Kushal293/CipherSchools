@@ -13,3 +13,17 @@ body.modal {
   overflow-y: hidden;
   overflow-x: hidden;
 } */
+
+.react-calendar-heatmap .color-empty {
+  fill: #262c36;
+}
+
+.react-calendar-heatmap .color-filled {
+  fill: #8cc665;
+}
+
+.react-calendar-heatmap text {
+  font-size: 8px;
+  fill: #aaa;
+  margin-right: 5px;
+}

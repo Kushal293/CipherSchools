@@ -7,10 +7,19 @@ import { AiFillTwitterCircle } from 'react-icons/ai/index.esm';
 import { AiFillInstagram } from 'react-icons/ai/index.esm';
 import { RiArrowDropDownLine } from 'react-icons/ri/index.esm'
 import { FaLink } from 'react-icons/fa/index.esm';
+import CalendarHeatmap from 'react-calendar-heatmap';
 
 const Content = () => {
     const [ isOpen, setIsOpen ] = useState(false);
     const [ isOpen2, setIsOpen2 ] = useState(false);
+    const dateJan = [ 22, 23, 24, 25, 26, 27, 28 ];
+    const dateFeb = [ 1, 7, 9, 13, 17, 19, 25];
+    const dateMarch = [ 5, 6, 7, 8, 9, 10, 11, 18, 25, 26, 27, 28, 29, 30, 31 ];
+    const dateApril = [ 1, 9, 10, 11, 12, 16, 23, 19, 26, 27, 28, 29, 22, 15];
+    const dateMay = [ 7, 8, 9, 10, 11, 12, 13, 17, 21, 22, 23, 24, 25, 26, 27 ];
+    const dateJune = [ 4, 5, 6, 7, 8, 9, 10, 11, 14, 18, 21, 25, 26, 27, 28, 29, 30 ];
+    const dateJuly = [ 1, 9, 10, 11, 12, 13, 14, 15, 22, 29 ];
+    const dateAug = [ 5 ];
     
   return (
       <div className={ styles.content }>
@@ -22,14 +31,32 @@ const Content = () => {
               <textarea className={styles.textarea} name="About" placeholder='Add something about you...' id="" cols="30" rows="5"></textarea>
           </div>
           <hr className={styles.hr} />
-          <h1>CIPHER MAP</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
-          <h1>Content</h1>
+          <div className={styles.section}>
+              <div className={styles.heading}>
+                  <h4>CIPHER MAP</h4>
+              </div>
+              <CalendarHeatmap
+                  startDate={ new Date('2023-01-01') }
+                  endDate={ new Date('2023-12-31') }
+                  values={ [
+                      ...dateJan.map((date, index) =>  ({ date: '2023-01-'+date, count: 12 })),
+                      ...dateFeb.map((date, index) =>  ({ date: '2023-02-'+date, count: 12 })),
+                      ...dateMarch.map((date, index) =>  ({ date: '2023-03-'+date, count: 12 })),
+                      ...dateApril.map((date, index) =>  ({ date: '2023-04-'+date, count: 12 })),
+                      ...dateMay.map((date, index) =>  ({ date: '2023-05-'+date, count: 12 })),
+                      ...dateJune.map((date, index) =>  ({ date: '2023-06-'+date, count: 12 })),
+                      ...dateJuly.map((date, index) =>  ({ date: '2023-07-'+date, count: 12 })),
+                      ...dateAug.map((date, index) =>  ({ date: '2023-08-'+date, count: 12 })),
+                  ]}
+                  classForValue={ (value) => {
+                      if (!value) {
+                          return 'color-empty';
+                      }
+                      return `color-filled`;
+                  } }
+                  showWeekdayLabels={true}
+                />
+          </div>
           <hr className={styles.hr} />
           <div className={styles.section}>
               <div className={styles.heading}>
