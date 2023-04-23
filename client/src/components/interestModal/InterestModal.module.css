@@ -1,0 +1,73 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.87);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    height: 330px;
+    width: 500px;
+    background: #262C36;
+    border-radius: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 40px;
+    color: #ccc;
+}
+
+.card ul {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card ul li {
+    background: #15181E;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+}
+
+.card ul li:hover {
+    background: #262C36;
+}
+
+.btns {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    bottom: 20px;
+    right: 40px;
+}
+
+.cancelbtn {
+    padding: 7px 15px;
+    border-radius: 5px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.submitbtn {
+    padding: 7px 15px;
+    border-radius: 5px;
+    background: #F3912E;
+    border: none;
+    cursor: pointer;
+}

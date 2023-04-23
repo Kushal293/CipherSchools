@@ -13,7 +13,9 @@ const Navbar = () => {
   return (
       <div className={ styles.navbar }>
           <div className={ styles.leftNav }>
-            <CgDetailsMore size="25px" />
+              <div className={ styles.menu }>
+                  <CgDetailsMore size="25px" />
+            </div>
             <div className={ styles.logoSection }>
                   <img className={ styles.logoImg } src={ logo } alt="logo" />
                   <h3>CipherSchools</h3>

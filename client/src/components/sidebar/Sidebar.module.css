@@ -38,3 +38,9 @@
 .sidebarItems:hover {
     background: #483D35;
 }
+
+@media screen and (max-width: 760px) {
+    .sidebar {
+        display: none;
+    }
+}

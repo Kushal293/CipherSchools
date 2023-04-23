@@ -12,7 +12,7 @@
     padding: 40px;
 }
 
-.rightside { 
+.leftside { 
     display: flex;
     align-items: center;
     gap: 20px;
@@ -51,6 +51,34 @@
     bottom: -8px;
 }
 
-.leftside {
 
+
+@media screen and (max-width: 760px) {
+    .header {
+        height: 100px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .leftside {
+        justify-content: start;
+    }
+
+    .rightside {
+        display: none;
+    }
+
+    .userInfo {
+        gap: 5px;
+    }
+
+    .userInfo h3, h4 {
+        font-size: 14px;
+    }
+
+    .userInfo h2 {
+        font-size: 16px;
+    }
 }

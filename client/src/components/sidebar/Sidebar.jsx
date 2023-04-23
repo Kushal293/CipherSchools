@@ -27,10 +27,10 @@ const Sidebar = () => {
               <li className={styles.sidebarItems}><DiCreativecommons color="white" size="20px" /> <span>Creator Access</span></li>
               <li className={styles.sidebarItems}><MdFeedback color="white" size="20px" /> <span>Feedback</span></li>
               <li className={styles.sidebarItems}><GiDetour color="white" size="20px" /> <span>Tour</span></li>
-              {/* <li className={styles.sidebarItems}><RiLogoutCircleFill color="white" size="20px" /> <span>Logout</span></li> */}
           </ul>
-          <ul>
-              <li className={styles.sidebarItems}><RiLoginCircleFill color="white" size="30px" /> <span>Login</span></li>
+      <ul>
+              <li className={styles.sidebarItems}><RiLogoutCircleFill color="white" size="30px" /> <span>Logout</span></li>
+              {/* <li className={styles.sidebarItems}><RiLoginCircleFill color="white" size="30px" /> <span>Login</span></li> */}
           </ul>
     </div>
   )

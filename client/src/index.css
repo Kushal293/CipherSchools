@@ -6,3 +6,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+/* 
+body.modal {
+  overflow: hidden;
+  position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden;
+} */

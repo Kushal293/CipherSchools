@@ -10,11 +10,11 @@ const RightSideBar = () => {
   return (
       <div className={ styles.sidebar }>
           <ul className={ styles.items }>
-              <li className={styles.sidebarItems}><MdSpaceDashboard color="white" size="35px" /> <span>Dashboard</span></li>
-              <li className={styles.sidebarItems}><ImProfile color="white" size="35px" /> <span>My Profile</span></li>
-              <li className={styles.sidebarItems}><SiCoursera color="white" size="35px" /> <span>Enrolled Courses</span></li>
-              <li className={styles.sidebarItems}><FaSave color="white" size="35px" /> <span>Wishlist</span></li>
-              <li className={styles.sidebarItems}><AiFillLike color="white" size="35px" /> <span>Liked Videos</span></li>
+              <li className={styles.sidebarItems}><MdSpaceDashboard color="white" size="25px" /> <span>Dashboard</span></li>
+              <li className={styles.sidebarItems}><ImProfile color="white" size="25px" /> <span>My Profile</span></li>
+              <li className={styles.sidebarItems}><SiCoursera color="white" size="25px" /> <span>Enrolled Courses</span></li>
+              <li className={styles.sidebarItems}><FaSave color="white" size="25px" /> <span>Wishlist</span></li>
+              <li className={styles.sidebarItems}><AiFillLike color="white" size="25px" /> <span>Liked Videos</span></li>
           </ul>
     </div>
   )

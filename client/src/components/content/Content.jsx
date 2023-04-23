@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Content.module.css';
 import { AiFillLinkedin } from 'react-icons/ai/index.esm';
 import { AiFillGithub } from 'react-icons/ai/index.esm';
@@ -9,6 +9,9 @@ import { RiArrowDropDownLine } from 'react-icons/ri/index.esm'
 import { FaLink } from 'react-icons/fa/index.esm';
 
 const Content = () => {
+    const [ isOpen, setIsOpen ] = useState(false);
+    const [ isOpen2, setIsOpen2 ] = useState(false);
+    
   return (
       <div className={ styles.content }>
           <div className={styles.section}>
@@ -42,35 +45,35 @@ const Content = () => {
                       </div>
                   </div>
                   <div className={ styles.singleLink }>
-                      <h4>Linkedin</h4>
+                      <h4>Github</h4>
                       <div className={ styles.inputBox }>
                           <AiFillGithub size="25px" color="gray" />
                           <input type="text" placeholder='Github' className={styles.input} />
                       </div>
                   </div>
                   <div className={ styles.singleLink }>
-                      <h4>Linkedin</h4>
+                      <h4>Facebook</h4>
                       <div className={ styles.inputBox }>
                           <BsFacebook size="25px" color="gray" />
                           <input type="text" placeholder='Facebook' className={styles.input} />
                       </div>
                   </div>
                   <div className={ styles.singleLink }>
-                      <h4>Linkedin</h4>
+                      <h4>Twitter</h4>
                       <div className={ styles.inputBox }>
                           <AiFillTwitterCircle size="25px" color="gray" />
                           <input type="text" placeholder='Twitter' className={styles.input} />
                       </div>
                   </div>
                   <div className={ styles.singleLink }>
-                      <h4>Linkedin</h4>
+                      <h4>Instagram</h4>
                       <div className={ styles.inputBox }>
                           <AiFillInstagram size="25px" color="gray" />
                           <input type="text" placeholder='Instagram' className={styles.input} />
                       </div>
                   </div>
                   <div className={ styles.singleLink }>
-                      <h4>Linkedin</h4>
+                      <h4>Your Website</h4>
                       <div className={ styles.inputBox }>
                           <FaLink size="25px" color="gray" />
                           <input type="text" placeholder='Your Website' className={styles.input} />
@@ -89,8 +92,8 @@ const Content = () => {
                       <h4>Highest education</h4>
                       <div className={ styles.selectBox }>
                           <span>Graduation</span>
-                          <RiArrowDropDownLine size="25px" />
-                          <ul className={ styles.dropdown }>
+                          <div onClick={() => setIsOpen(!isOpen)}><RiArrowDropDownLine size="25px" /></div>
+                          <ul className={ `${styles.dropdown} ${isOpen ? styles.open : ""}` }>
                               <li>Primary</li>
                               <li>Secondary</li>
                               <li>Higher Secondary</li>
@@ -103,8 +106,8 @@ const Content = () => {
                       <h4>What do you do currently?</h4>
                       <div className={ styles.selectBox }>
                           <span>College student</span>
-                          <RiArrowDropDownLine size="25px" />
-                          <ul className={ styles.dropdown }>
+                          <div onClick={() => setIsOpen2(!isOpen2)}><RiArrowDropDownLine size="25px" /></div>
+                          <ul className={ `${styles.dropdown} ${isOpen2 ? styles.open : ""}` }>
                               <li>Schooling</li>
                               <li>College student</li>
                               <li>Teaching</li>
@@ -119,7 +122,7 @@ const Content = () => {
           <div className={styles.section}>
               <div className={styles.heading}>
                   <h4>PASSWORD AND SECURITY</h4>
-                  <button className={styles.editBtn}>Edit</button>
+                  <button className={styles.editBtn}>Change</button>
               </div>
                   <div className={ styles.singleLink }>
                       <h4>PASSWORD</h4>
@@ -129,7 +132,13 @@ const Content = () => {
                   </div>
           </div>
           <hr className={styles.hr} />
-          <h1>INTERESTS</h1>
+          <div className={styles.section}>
+              <div className={styles.heading}>
+                  <h4>INTERESTS</h4>
+                  <button className={styles.editBtn}>Edit</button>
+              </div>
+          </div>
+          <br />
     </div>
   )
 }

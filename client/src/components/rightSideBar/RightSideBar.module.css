@@ -6,9 +6,8 @@
     right: 0;
     top: 190px;
     bottom: 0;
-    padding: 20px 0px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-start;
     border-radius: 10px;
 }
@@ -16,23 +15,33 @@
 .items {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     gap: 10px;
+    width: 100%;
 }
 
 .sidebarItems {
     display: flex;
     align-items: center;
+    justify-content: start;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     gap: 20px;
     padding: 10px 30px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.25s ease-in-out;
+    width: 100%;
 }
 
 .sidebarItems:hover {
     background: #483D35;
+}
+
+@media screen and (max-width: 760px) {
+    .sidebar {
+        display: none;
+    }
 }

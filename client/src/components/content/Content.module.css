@@ -1,9 +1,9 @@
 .content {
     background: #15181e;
     width: 80%;
-    padding-left: 100px;
-    padding-top: 190px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-top: 200px;
+    padding-right: 40px;
 }
 
 .section {
@@ -30,7 +30,7 @@
     border: none;
     outline: none;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 18px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -76,6 +76,7 @@
     border: none;
     outline: none;
     color: white;
+    width: 100%;
 }
 
 .input::placeholder {
@@ -101,11 +102,15 @@
     bottom: -210px;
     left: 0;
     background: #262c36;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     width: 100%;
     border-radius: 5px;
     display: none;
+}
+
+.open {
+    display: flex;
 }
 
 .dropdown li {
@@ -115,4 +120,16 @@
 
 .dropdown li:hover {
     background: #483D35;
+}
+
+@media screen and (max-width: 760px) {
+    .content {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .webLinks {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

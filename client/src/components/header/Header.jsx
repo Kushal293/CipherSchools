@@ -5,7 +5,7 @@ import { MdModeEditOutline } from 'react-icons/md/index.esm';
 const Header = () => {
   return (
       <div className={ styles.header }>
-          <div className={styles.rightside}>
+          <div className={styles.leftside}>
               <div className={styles.userLogo}>
                   K
                   <div className={styles.logoEdit}> <MdModeEditOutline size="15px" /></div>
@@ -16,7 +16,7 @@ const Header = () => {
                   <h4>kushal@gmail.com</h4>
               </div>
           </div>
-          <div className={ styles.leftside }>
+          <div className={ styles.rightside }>
               <h3><span>0</span> Followers</h3>
           </div>
     </div>

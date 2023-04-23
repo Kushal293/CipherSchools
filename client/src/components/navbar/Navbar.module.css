@@ -21,6 +21,12 @@
     gap: 25px;
 }
 
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .rightNav {
     display: flex;
     align-items: center;
@@ -92,4 +98,39 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+@media screen and (max-width: 760px) {
+    .navbar {
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .leftNav {
+        gap: 10px;
+    }
+
+    .rightNav {
+        gap: 20px;
+    }
+
+    .logoSection {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+    }
+    
+    .logoImg {
+        height: 25px;
+        width: 25px;
+    }
+
+    .inputBox {
+        display: none;
+    }
 }
